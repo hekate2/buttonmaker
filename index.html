@@ -1,0 +1,600 @@
+<!DOCTYPEhtml>
+<html>
+<head>
+    <title>Web Button Maker</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta name="title" content="Web Button Maker">
+    <meta name="description" content="Geocities-style 88*31 web button maker">
+    <meta name="keywords" content="88*31, web buttons, web button, geocities, neocities">
+    <meta name="robots" content="index, follow">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="language" content="English">
+    <meta name="author" content="Hekate.neocities.org">
+    <style> 
+        @font-face {
+            font-family: 'UnknownTimesNewR';
+            src: url('fonts/UnknownTimesNewR.woff2') format('woff2'),
+                url('fonts/UnknownTimesNewR.woff') format('woff');
+            font-weight: 500;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'pix M 8pt';
+            src: url('fonts/MyFont.woff2') format('woff2'),
+                url('fonts/MyFont.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+@font-face {
+    font-family: 'depixelbold';
+    src: url('fonts/depixelhalbfett-webfont.eot');
+    src: 
+         url('fonts/depixelhalbfett-webfont.woff2') format('woff2'),
+         url('fonts/depixelhalbfett-webfont.woff') format('woff'),
+        ;
+    font-weight: normal;
+    font-style: normal;
+
+} /* FONT START */
+        @font-face {
+    font-family: 'editorial_newlight';
+    src: url('fonts/editorialnew-light-webfont.woff2') format('woff2'),
+         url('fonts/editorialnew-light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'mondwestregular';
+    src: url('fonts/mondwest-regular-webfont.woff2') format('woff2'),
+         url('fonts/mondwest-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'neuebitbold';
+    src: url('fonts/neuebit-bold-webfont.woff2') format('woff2'),
+         url('fonts/neuebit-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'neue_montrealregular';
+    src: url('fonts/neuemontreal-regular-webfont.woff2') format('woff2'),
+         url('fonts/neuemontreal-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+        *{
+            margin: 0;
+        }
+        body, input, button {
+            background-color: #00817f;
+        }
+        #holder {
+            width: 630px;
+            height: 450px;
+            border: 1px solid #000;
+            position: absolute;
+            left: 50%;
+            margin-left: -315px;
+        }
+        .titleness {
+            font-size: 7pt;
+            font-weight: bold;
+            color: white;
+            font-family: 'pix M 8pt';
+            background-color: #acaad6;
+            padding: 3px;
+            border-right: 1px solid #000;
+            border-bottom: 1px solid #000;
+        }
+        .titleness p {
+            background: linear-gradient(90deg, rgba(61,61,119,1) 0%, rgba(186,142,200,1) 100%);
+        }
+        .content { /* styling for nav contents */
+            display: none;
+            position: absolute;
+            top: 200px;/* makes nav contents invisible by default DONT touch */
+        }
+        #skeleton { /* styling for nav holder, thus a skeleton :-D */
+            width: 200px; /* Adjust depending on desired nav height */
+            max-height: 100%;
+            background-color: black;
+            position: absolute;
+        }
+        .name { /* styling for nav contents */
+            font-family: 'pix M 8pt';
+            font-size: 7pt;
+            font-weight: bold;
+            color: black;
+            height: 30px;
+            width: 190px;
+            padding: 5px;
+            background-image: url("lilacbase.png");
+        }
+        #stage {
+            width: 200px;
+            height: 125px;
+            border: 1px solid #000;
+            position: absolute;
+            left: 210px;
+        }
+        #dragimg {
+            max-height: 31px;
+            max-width: 88px;
+            position: absolute;
+        }
+        .strangers {
+            max-width: 100%;
+            max-height: 200%;
+            min-height: 5px;
+            display: inline-block;
+            font-size: 15pt;
+            padding: 5px;
+            position: absolute; !important
+        }
+        .buttonbase {
+            position: absolute;
+        }
+        .color {
+            height: 15px;
+            width: 15px;
+        }
+        .content td {
+            background-image: url("lilacgraphbase.png");
+            background-repeat: no-repeat;
+            text-align: center;
+            font-size: 13pt;
+            width: 90px;
+            height: 37px;
+            border-right: 2px solid #000;
+        }
+        .content table {
+            border-collapse: collapse;
+            margin-top: 5px;
+            margin-left: 5px;
+        }
+        #mine {
+            position: absolute;
+            text-align: center;
+            width: 100%;
+            top: 450px;
+            color: yellow;
+            font-style: italic;
+        }
+        .imagepreview {
+            width: 205px;
+            height: 180px;
+            border: 1px solid #000;
+            position: absolute;
+            left: 424px;
+            top: -200px;
+        }
+        .imagepreview img{
+            max-width: 205px;
+            max-height: 158px;
+        }
+        canvas {
+            max-width: 100%;
+            max-height: 100%;
+        }
+        #submit {
+            position: absolute;
+            left: 565px;
+            top: 425px;
+        }
+        #capture {
+            width: 88px;
+            height: 31px;
+        }
+        #resultholder {
+            height: 50px;
+            width: 88px;
+            padding: 5px;
+            border: 1px solid #000;
+            position: absolute;
+            left: 50%;
+            margin-left: -44px;
+            top: 100%;
+            margin-top: -68px;
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css"/>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+   	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+    <Script src="https://raw.githubusercontent.com/SMUsamaShah/CanvasRecorder/master/CanvasRecorder.js"></script>
+    <meta charset=utf-8 />
+</head>
+<body>
+    <div id="holder">
+        <div id="skeleton">
+            <div id="one">
+                <div class="holder">
+                    <div class="titleness">
+                        <p>
+                            Menu
+                        </p>
+                    </div>
+                    <div class="name">
+                        Backgrounds
+                    </div>
+                    <div class="content">
+                        <img src="buttonbase.png" class="buttonchoose">
+                        <img src="redbase.png" class="buttonchoose">
+                        <img src="orangebase.png" class="buttonchoose">
+                        <img src="yellowbase.png" class="buttonchoose">
+                        <img src="greenbase.png" class="buttonchoose">
+                        <img src="bluebasedark.png" class="buttonchoose">
+                        <img src="bluebaselight.png" class="buttonchoose">
+                        <img src="purplebasedark.png" class="buttonchoose">
+                        <img src="purplebaselight.png" class="buttonchoose">
+                        <img src="pinkbasedark.png" class="buttonchoose">
+                        <img src="pinkbaselight.png" class="buttonchoose">
+                        <img src="blackbase.png" class="buttonchoose">
+                        <img src="whitebase.png" class="buttonchoose">
+                        <img src="rainbowbase.png" class="buttonchoose">
+
+                        <div class="imagepreview">
+                            <div class="titleness">
+                                <p>
+                                    Tutorial
+                                </p>
+                            </div>
+                            <img src="tutorials/1.gif">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="two">
+                <div class="holder">
+                    <div class="name">
+                        Add an image
+                    </div>
+                    <div class="content">
+                        <input type='file' onchange="readURL(this);" />
+
+                        <div class="imagepreview">
+                            <div class="titleness">
+                                <p>
+                                    Tutorial
+                                </p>
+                            </div>
+                            <img src="tutorials/2.gif">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="three">
+                <div class="holder">
+                    <div class="name">
+                        Add some text
+                    </div>
+                    <div class="content">
+                        <form>
+                          <input type="text" id="textInput">
+                          <button id="submitButton" class="btn btn-primary">Submit</button>
+                        </form>
+                        <table width="620px">
+                            <tr>
+                                <td>
+                                    <span style="font-family: 'depixelbold';" class="font">
+                                        Font 1
+                                    </span>
+                                </td>
+                                <td>
+                                    <span style="font-family: 'editorial_newlight';" class="font">
+                                        Font 2
+                                    </span>
+                                </td>
+                                <td>
+                                    <span style="font-family: 'pix M 8pt';" class="font">
+                                        Font 3
+                                    </span>
+                                </td>
+                                <td>
+                                    <span style="font-family: 'UnknownTimesNewR';" class="font">
+                                        Font 4
+                                    </span>
+                                </td>
+                                <td>
+                                    <span style="font-family: 'mondwestregular';" class="font">
+                                        Font 5
+                                    </span>
+                                </td>
+                                <td>
+                                    <span style="font-family: 'neuebitbold';" class="font">
+                                        Font 6
+                                    </span>
+                                </td>
+                                <td>
+                                    <span style=" font-family: 'neue_montrealregular';" class="font">
+                                        Font 7
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span style="font-weight: normal;" class="weight">
+                                        Normal
+                                    </span>
+                                </td>
+                                <td>
+                                    <span style="font-weight: bolder;" class="weight">
+                                        Bold
+                                    </span>
+                                </td>
+                                <td>
+                                    <span style="text-decoration: line-through;" class="decor">
+                                        Line-thru
+                                    </span>
+                                </td>
+                                <td>
+                                    <span style="text-decoration: underline;" class="decor">
+                                        Underline
+                                    </span>
+                                </td>
+                                <td>
+                                    <span style="font-style: italic;" class="letterstyle">
+                                        Italics
+                                    </span>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="color" style="background-color: red; color: red;">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="color" style="background-color: orange; color: orange;">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="color" style="background-color: yellow; color: yellow;">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="color" style="background-color: green; color: green;">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="color" style="background-color: blue; color: blue;">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="color" style="background-color: purple; color: purple;">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="color" style="background-color: hotpink; color: hotpink;">
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+
+                        <div class="imagepreview">
+                            <div class="titleness">
+                                <p>
+                                    Tutorial
+                                </p>
+                            </div>
+                            <center>
+                                <img src="tutorials/3.gif">
+                            </center>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="four">
+                <div class="holder">
+                    <div class="name">
+                        Fancy details
+                    </div>
+                    <div class="content">
+                        <table width="620px">
+                            <tr>
+                                <td>
+                                    <img src="a1.png" class="a">
+                                </td>
+                                <td>
+                                    <img src="a2.png" class="a">
+                                </td>
+                                <td>
+                                    <img src="a3.png" class="a">
+                                </td>
+                                <td>
+                                    <img src="a4.png" class="a">
+                                </td>
+                                <td>
+                                    <img src="a5.png" class="a">
+                                </td>
+                                <td>
+                                    <img src="a6.png" class="a">
+                                </td>
+                                <td>
+                                    <img src="a7.png" class="a">
+                                </td>
+                            </tr>
+                        </table>
+                        <div class="imagepreview">
+                            <div class="titleness">
+                                <p>
+                                    Tutorial
+                                </p>
+                            </div>
+                            <img src="tutorials/4.gif">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="stage">
+        </div>
+        <button onclick="make();" id="submit">Save it!</button>
+            <div id="mine">
+                Made with love in 2020 by <a href="https://hekate.neocities.org" style="text-decoration: underline; color: yellow;">Hekate</a>!
+            </div>
+        </div>
+        <div id="resultholder">
+            Result:
+        </div>
+    <script>
+        function make() {
+        html2canvas(document.querySelector("#capture")).then(canvas => {
+            document.querySelector("#resultholder").appendChild(canvas);
+            var canvas = document.getElementById("canvas");
+            var img    = canvas.toDataURL("image/png");
+            document.write('<img src="'+img+'"/>');
+        });
+        }
+    </script>
+    <script>
+        var i = 1;
+        var t = -1;
+        
+        $('.name').click( function () {
+                if($(this).siblings('.content').is(":visible")){
+                $(this).siblings('.content').hide();
+         } else{ 
+             $('.content').hide();
+              $(this).siblings().show();
+         }
+            });
+        
+        $('.buttonchoose').click( function() {
+            $('<div id="capture"></div>').appendTo('#stage');
+            $('<img src="" class="buttonbase" id="button">').appendTo('#capture');
+            $('.buttonbase').attr('src', $(this).attr('src'));
+            $('#capture').draggable();
+        });
+        $('.a').click( function() {
+            $('<img src="" class="asset">').appendTo('#capture');
+            $('.asset').attr('src', $(this).attr('src'));
+            $('.asset').draggable();
+            $('.asset').attr('class', 'inactive');
+        });
+        
+        $(document).ready(function() {
+            $("#submitButton").on("click", function(e) {
+            e.preventDefault();
+            $('#active').attr('id', 'dormant');
+            $('<div id="active" class="guests"></div>').appendTo('#capture');
+            $('<p></p>').appendTo('.guests');
+            var input = $("#textInput").val()
+                if ($('.guests > p').is(':empty')) { 
+                    $('.guests > p:empty').text(input)
+                    $('.guests').attr('class', 'strangers').draggable().resizable({
+                        autoHide: true
+                    });
+                }
+          })
+            
+        });
+        
+        var s = 1;
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                
+                reader.onload = function (e) {
+                    $('#capture').append('<div id="moveme"></div>');
+                    $('#moveme').append('<img id="dragimg" src="" alt="your image"/>').draggable();
+                    $('#dragimg').resizable({
+                        autoHide: true
+                    });
+                    $('#dragimg').each(function () {
+                        if (this.src.length > 0) {
+                            $('#dragimg').attr('src', e.target.result);
+                            $('#dragimg').attr('id', s);
+                            $('#moveme').attr('id', s);
+                            s++;
+                        }
+                    });
+                    
+                    
+                    
+                };
+              
+                reader.readAsDataURL(input.files[0]);    
+            }
+        }
+        
+        var h = 33;
+        $(document).on('resize', '.strangers', function() {
+            if ($('.strangers').css('height') <= h + 'px' && h >= 5) {
+                $(this).css('font-size', h + 'px');
+                h -=1;
+            } else if ($('.strangers').css('height') >= h + 'px') {
+                $(this).css('font-size', h + 'px');
+                h +=.5;
+            }
+        });
+        $(document).on('drag', '.buttonbase', function() {
+      			$('.buttonbase').css('zIndex', i);
+                i++;
+        });
+		$(document).on('click', '.buttonbase', function() {
+      			$(this).remove();
+        });
+        $(document).on('drag', '.inactive', function() {
+      			$('.inactive').css('zIndex', i);
+                i++;
+        });
+		$(document).on('click', '.inactive', function() {
+      			$(this).remove();
+        });
+        $(document).on('drag', '#moveme', function() {
+                $('#dragimg').css('zIndex', i);
+      			$('#moveme').css('zIndex', i);
+                i++;
+        });
+        $(document).on('click', '#moveme', function() {
+                $('#dragimg').remove();
+      			$('#moveme').remove();
+        });
+        $(document).on('drag', '.strangers, #1, #2, #3, #4, #5', function() {
+      			$(this).css('zIndex', i);
+                i++;
+        });
+		$(document).on('click', '.strangers, #1, #2, #3, #4, #5', function() {
+      			$(this).remove();
+        });
+        $(document).on('click', '.font', function() {
+      			$('#active').css('font-family', $(this).css('font-family'));
+        });
+        $(document).on('click', '.decor', function() {
+      			$('#active').css('text-decoration', $(this).css('text-decoration'));
+        });
+        $(document).on('click', '.letterstyle', function() {
+      			$('#active').css('font-style', $(this).css('font-style'));
+        });
+        $(document).on('click', '.weight', function() {
+                $('#active').css('font-weight', $(this).css('font-weight'));
+        });
+        $(document).on('click', '.color', function() {
+                $('#active').css('color', $(this).css('color'));
+        });
+    </script>
+</body>
+</html>
