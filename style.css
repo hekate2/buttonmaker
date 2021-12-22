@@ -1,0 +1,287 @@
+aside,
+input[type="number"],
+input[type="text"],
+main,
+select,
+#hints,
+#stage,
+#tutorials,
+.menu {
+  border: 1px solid;
+}
+
+body > ol li {
+  margin-bottom: 10px;
+}
+
+section.text label,
+ul,
+#submit_text,
+.menu > ul li {
+  margin: 0;
+}
+
+body > ol a,
+body > p,
+body > p a,
+#hints {
+  color: yellow;
+}
+
+body,
+button,
+input,
+select {
+  font: 10pt 'w95faregular';
+}
+
+.button,
+.button > *,
+#hints,
+#stage,
+#stage *,
+#submit_text {
+  position: absolute;
+}
+
+main,
+#submit_img {
+  display: block;
+}
+
+#stage div {
+  color: #fff;
+  cursor: pointer;
+}
+
+#tutorials img,
+.hidden,
+.menu,
+.menu ul li.hidden {
+  display: none;
+}
+
+aside ul,
+#tutorials ul,
+.menu > ul {
+  min-height: 100%;
+}
+
+aside h4,
+#tutorials h4 {
+  padding-left: 5px;
+  color: white;
+}
+
+aside ul,
+#tutorials ul {
+  flex-flow: column;
+}
+
+aside ul,
+section.extra ul,
+section.text label,
+#submit_text,
+#tutorials ul,
+.menu > ul li,
+.visible {
+  display: flex;
+}
+
+aside ul > li,
+#tutorials ul > li {
+  flex: 1;
+}
+
+aside ul > li:nth-child(1),
+#tutorials ul > li:nth-child(1) {
+  max-height: 25px;
+}
+
+aside,
+section.text label,
+#stage,
+#tutorials,
+#tutorials img.visible {
+  display: inline-block;
+}
+
+aside,
+section.text label,
+#stage,
+#tutorials {
+  width: 33%;
+}
+
+#tutorials img.visible {
+  width: calc(100% - 4px);
+  display: inline-block;
+}
+
+aside,
+#tutorials > ul {
+  height: 200px;
+}
+
+main,
+#stage {
+  overflow: hidden;
+}
+
+body {
+  text-align: center;
+  background-color: #00817f;
+  color: #000;
+}
+
+ul {
+  padding: 0;
+}
+
+ul li {
+  list-style-type: none;
+}
+
+button,
+input[type="color"],
+section.text label,
+ul li {
+  background-color: #babade;
+  border: 2px outset #babade;
+  box-shadow: 0px 0px 0px 1px #000;
+}
+
+main,
+#hints {
+  text-align: left;
+}
+
+main {
+  width: 630px;
+  max-height: 100%;
+  margin: 0 auto;
+}
+
+aside {
+  margin: -1px 0px 0px -1px;
+  float: left;
+}
+
+#stage {
+  width: calc(33% - 18px);
+  height: 178px;
+  margin: 10px;
+  background-color: #000;
+}
+
+#stage img {
+  max-height: 31px;
+}
+
+#tutorials {
+  float: right;
+  margin: -1px;
+}
+
+.menu {
+  max-height: 400px;
+  padding-right: 20px;
+  height: calc(100% - 201px);
+  margin: -4px -1px -1px -1px;
+  overflow-y: scroll;
+}
+
+section.text label,
+.menu,
+.menu > ul {
+  width: 100%;
+}
+
+input[type="color"] {
+  height: 20px;
+  width: 15px;
+  padding: 0px 2px;
+}
+
+section.text label,
+#submit_text,
+.menu > ul li {
+  height: 25px;
+  align-items: center;
+}
+
+button,
+section.text label,
+.menu > ul li {
+  padding: 5px;
+}
+
+label {
+  margin-right: 5px;
+}
+
+input[type="number"] {
+  width: 35px;
+}
+
+ul > li > h4 {
+  width: calc(100% - 8px);
+  height: 17px;
+  padding-top: 3px;
+  margin-top: 2px;
+  background: linear-gradient(90deg,
+  rgba(61,61,119,1) 0%,
+  rgba(186,142,200,1) 100%);
+}
+
+#tutorials img {
+  height: calc(100% - 4px);
+  width: calc(100% - 4px);
+  border: 1px solid #000;
+}
+
+section.extra {
+  flex-direction: row;
+}
+
+section.extra ul {
+  flex-wrap: wrap;
+}
+
+section.extra li {
+  width: calc(20% - 14px);
+}
+
+.glow_box {
+  animation: 5s glow-box;
+}
+
+.glow_text {
+  animation: 5s glow-text;
+}
+
+#stage {
+  width: 190px;
+}
+
+#hints {
+  width: 10%;
+  top: 7px;
+  padding: 20px;
+  left: calc(90% - 60px);
+  background-color: teal;
+}
+
+/* ANIMATIONS */
+@keyframes glow-box {
+  50% {box-shadow: 0px 0px 3px 3px #fff;}
+}
+
+@keyframes glow-text {
+  50% {
+    text-shadow:
+    0px 0px 3px #fff,
+    0px 0px 3px #fff,
+    0px 0px 3px #fff;
+  }
+}

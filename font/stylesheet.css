@@ -1,0 +1,142 @@
+@font-face {
+    font-family: 'w95faregular';
+    src: url('w95fa-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Dico';
+    src: url('Dico.woff2') format('woff2'),
+        url('Dico.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: '3D Thirteen Pixel Fonts';
+    src: url('3D-Thirteen-Pixel-Fonts.woff2') format('woff2'),
+        url('3D-Thirteen-Pixel-Fonts.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'KiwiSoda';
+    src: url('KiwiSoda.woff2') format('woff2'),
+        url('KiwiSoda.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Cursive';
+    src: url('Cursive.woff2') format('woff2'),
+        url('Cursive.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'FFF Galaxy';
+    src: url('FFFGalaxy.woff2') format('woff2'),
+        url('FFFGalaxy.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Cloude Regular 1.0';
+    src: url('Cloude_Regular_102.woff2') format('woff2'),
+        url('Cloude_Regular_102.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Cloude Regular 1.0';
+    src: url('Cloude_Regular_Bold_102.woff2') format('woff2'),
+        url('Cloude_Regular_Bold_102.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pixel Arial 11';
+    src: url('PixelArial11.woff2') format('woff2'),
+        url('PixelArial11.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Perfect DOS VGA 437 Win';
+    src: url('PerfectDOSVGA437Win.woff2') format('woff2'),
+        url('PerfectDOSVGA437Win.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pixel-Western';
+    src: url('Pixel-Western-Regular.woff2') format('woff2'),
+        url('Pixel-Western-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pixel Arial 11';
+    src: url('PixelArial11Bold.woff2') format('woff2'),
+        url('PixelArial11Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Silkscreen';
+    src: url('Silkscreen-Bold.woff2') format('woff2'),
+        url('Silkscreen-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Silkscreen';
+    src: url('Silkscreen-Expanded.woff2') format('woff2'),
+        url('Silkscreen-Expanded.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Windows Command Prompt';
+    src: url('Windows-Command-Prompt.woff2') format('woff2'),
+        url('Windows-Command-Prompt.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PixelPlay';
+    src: url('PixelPlay.woff2') format('woff2'),
+        url('PixelPlay.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
