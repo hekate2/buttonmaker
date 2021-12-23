@@ -33,7 +33,7 @@
 }
 
 @font-face {
-    font-family: 'Cursive';
+    font-family: 'CursivePixel';
     src: url('Cursive.woff2') format('woff2'),
         url('Cursive.woff') format('woff');
     font-weight: normal;

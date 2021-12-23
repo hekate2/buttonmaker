@@ -12,6 +12,7 @@
     let imageDims = qsa("#new_image_height, #new_image_width");
     let details = qsa("section.extra li");
 
+    qs("section.text form").addEventListener("change", previewFont);
     id("save_img").addEventListener("click", saveImage);
     qs(".text > form").addEventListener("submit", function(e) {
       e.preventDefault();
@@ -37,6 +38,13 @@
     buildABase();
   }
 
+  function previewFont() {
+    let properties = getProperties();
+    let text = setTextAttributes(qs("#font_preview .message"), properties);
+
+    console.log(text);
+  }
+
   /** Appends an image to the stage when selected */
   function appendImage() {
     var itm = this.querySelector("img");
@@ -57,26 +65,48 @@
 
   /** Creates a text element based on input and appends it to the stage */
   function drawText() {
-    let wordContent = id("text_content").value;
-    let fontFamily = id("font_family").value;
-    let textDecoration = id("text_decoration").value;
-    let fontStyle = id("font_style").value;
-    let fontWeight = id("font_weight").value;
-    let fontSize = id("font_size").value + "pt";
-    let fontColor = id("font_color").value;
-
-    console.log(fontFamily);
+    let properties = getProperties();
 
     let text = document.createElement("div");
-    text.style["font"] = fontStyle + " " + fontWeight + " " + fontSize + " '" + fontFamily + "'";
-    text.style["textDecoration"] = textDecoration;
-    text.style["color"] = fontColor;
-    text.textContent = wordContent;
+    text = setTextAttributes(text, properties);
 
     makeRemoveable(text);
 
     setToStage(text, "glow_text");
     makeDraggable(text);
+  }
+
+  function setTextAttributes(text, properties) {
+    text.style["font"] = properties.fontStyle +
+    " " +
+    properties.fontWeight +
+    " " +
+    properties.fontSize +
+    " '" +
+    properties.fontFamily +
+    "'";
+
+    text.style["textDecoration"] = properties.textDecoration;
+    text.style["color"] = properties.fontColor;
+    text.textContent = properties.wordContent;
+
+    return text;
+  }
+
+  function getProperties() {
+    let results = {
+      wordContent: id("text_content").value,
+      fontFamily: id("font_family").value,
+      textDecoration: id("text_decoration").value,
+      fontStyle: id("font_style").value,
+      fontWeight: id("font_weight").value,
+      fontSize: id("font_size").value + "pt",
+      fontColor: id("font_color").value
+    }
+
+    console.log(results)
+
+    return results;
   }
   
   /**
@@ -86,7 +116,6 @@
    */
   function toggleTabs(e) {
     let selector = this.getAttribute("data-value");
-    console.log(selector);
     let visible = qsa(".visible");
     let allWithClass = qsa("." + selector);
 
@@ -129,7 +158,6 @@
    */
   function updateStyles(e) {
     let toUpdate = this.getAttribute("name");
-    console.log(toUpdate);
 
     if (this.getAttribute("type") === "file") {
       imgUpload(e, toUpdate);
@@ -169,8 +197,6 @@
       let hiddenDims = qsa(".menu ul li.hidden");
 
       newImage.src = imgInput;
-
-      console.log(newImage);
 
       if (qsa(".active_img").length > 0) {
         qs(".active_img").classList.remove("active_img");

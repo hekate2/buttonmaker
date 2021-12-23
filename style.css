@@ -15,6 +15,7 @@ body > ol li {
 }
 
 section.text label,
+section.text p,
 ul,
 #submit_text,
 .menu > ul li {
@@ -98,6 +99,10 @@ aside ul > li:nth-child(1),
   max-height: 25px;
 }
 
+.menu form {
+  width: calc(100% - 14px);
+}
+
 aside,
 section.text label,
 #stage,
@@ -145,6 +150,7 @@ ul li {
 button,
 input[type="color"],
 section.text label,
+section.text p,
 ul li {
   background-color: #babade;
   border: 2px outset #babade;
@@ -192,6 +198,7 @@ aside {
 }
 
 section.text label,
+section.text p,
 .menu,
 .menu > ul {
   width: 100%;
@@ -212,6 +219,7 @@ section.text label,
 
 button,
 section.text label,
+section.text p,
 .menu > ul li {
   padding: 5px;
 }
@@ -270,6 +278,10 @@ section.extra li {
   padding: 20px;
   left: calc(90% - 60px);
   background-color: teal;
+}
+
+#submit_text {
+  margin-top: 1px;
 }
 
 /* ANIMATIONS */
