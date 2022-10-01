@@ -86,6 +86,10 @@
     properties.fontFamily +
     "'";
 
+    console.log(properties)
+
+    text.style["textAlign"] = properties.textAlign;
+
     text.style["textDecoration"] = properties.textDecoration;
     text.style["color"] = properties.fontColor;
 
@@ -106,7 +110,8 @@
       fontStyle: id("font_style").value,
       fontWeight: id("font_weight").value,
       fontSize: id("font_size").value + "pt",
-      fontColor: id("font_color").value
+      fontColor: id("font_color").value,
+      textAlign: id("text_align").value
     }
 
     console.log(results)
