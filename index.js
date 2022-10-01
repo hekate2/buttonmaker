@@ -88,7 +88,12 @@
 
     text.style["textDecoration"] = properties.textDecoration;
     text.style["color"] = properties.fontColor;
-    text.textContent = properties.wordContent;
+
+    if (properties.wordContent.length != "") {
+      text.textContent = properties.wordContent;
+    } else {
+      text.textContent = "Sphynx of black quartz, judge my vow"
+    }
 
     return text;
   }
